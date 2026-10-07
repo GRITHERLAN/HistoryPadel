@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia del Pádel - Origen y Evolución</title>
+    <meta name="description" content="Del patio de una hacienda en Acapulco a las grandes pistas del mundo: la historia del pádel.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Sprite de iconos -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <defs>
+            <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+            <symbol id="i-racket" viewBox="0 0 24 24"><ellipse cx="10" cy="9" rx="6.5" ry="7.5" transform="rotate(-35 10 9)"/><path d="M14.5 14.5 21 21"/><circle cx="8" cy="7" r=".6"/><circle cx="11" cy="9" r=".6"/><circle cx="9" cy="11" r=".6"/><circle cx="12" cy="6" r=".6"/></symbol>
+            <symbol id="i-wall" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1"/><path d="M3 9h18M3 14h18M9 4v5M15 9v5M9 14v6"/></symbol>
+            <symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></symbol>
+            <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 4h8v6a4 4 0 0 1-8 0V4zM8 6H4v1a4 4 0 0 0 4 4M16 6h4v1a4 4 0 0 1-4 4M12 14v4M8 21h8M10 18h4"/></symbol>
+            <symbol id="i-tv" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+            <symbol id="i-ring" viewBox="0 0 24 24"><circle cx="6" cy="9" r="3.5"/><circle cx="12" cy="9" r="3.5"/><circle cx="18" cy="9" r="3.5"/><circle cx="9" cy="14" r="3.5"/><circle cx="15" cy="14" r="3.5"/></symbol>
+            <symbol id="i-ruler" viewBox="0 0 24 24"><rect x="2" y="8" width="20" height="8" rx="1"/><path d="M6 8v3M10 8v4M14 8v3M18 8v4"/></symbol>
+            <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.5 2.7-6 6-6s6 2.5 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2c3 .2 5 2.3 5 5.8"/></symbol>
+            <symbol id="i-ball" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M4 7c4 1 7 4 8 8s0 5 0 6M20 7c-4 1-7 4-8 8"/></symbol>
+            <symbol id="i-score" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M12 5v14M7 10h2M15 10h2M7 14h2M15 14h2"/></symbol>
+            <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></symbol>
+        </defs>
+    </svg>
+
+    <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+    <div class="court-lines" aria-hidden="true"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <a href="#inicio" class="logo"><span class="logo-ball"></span>PÁDEL<em>HISTORY</em></a>
+            <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#origenes">Orígenes</a></li>
+                <li><a href="#evolucion">Evolución</a></li>
+                <li><a href="#datos">Datos</a></li>
+                <li><a href="#actualidad">Actualidad</a></li>
+                <li><a href="#reglas">Reglas</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero" id="inicio">
+            <div class="hero-spot"></div>
+
+            <div class="hero-court" aria-hidden="true">
+                <div class="court-3d">
+                    <svg viewBox="-20 -20 440 840" class="court-svg">
+                        <rect class="court-floor" x="0" y="0" width="400" height="800" rx="6"/>
+                        <g class="court-draw" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="0" y="0" width="400" height="800" rx="6" pathLength="1"/>
+                            <line x1="0" y1="400" x2="400" y2="400" pathLength="1" class="net-line"/>
+                            <line x1="0" y1="122" x2="400" y2="122" pathLength="1"/>
+                            <line x1="0" y1="678" x2="400" y2="678" pathLength="1"/>
+                            <line x1="200" y1="122" x2="200" y2="678" pathLength="1"/>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+
+            <div class="ball" aria-hidden="true"></div>
+
+            <div class="hero-content">
+                <p class="eyebrow reveal">Acapulco, 1969 &rarr; el mundo</p>
+                <h1 class="reveal"><span>La historia</span><span class="outline">del pádel</span></h1>
+                <p class="hero-sub reveal">Del patio de una hacienda mexicana a las grandes pistas del planeta. Así nació el deporte que no para de crecer.</p>
+                <a href="#origenes" class="cta-button reveal">Entrar en pista</a>
+            </div>
+
+            <a href="#origenes" class="scroll-hint" aria-label="Bajar"><span></span></a>
+        </section>
+
+        <div class="net-divider" aria-hidden="true"></div>
+
+        <!-- ORÍGENES -->
+        <section class="section" id="origenes">
+            <div class="section-content">
+                <header class="section-head reveal">
+                    <span class="kicker">01 &middot; Saque inicial</span>
+                    <h2>Los orígenes</h2>
+                </header>
+                <div class="content-grid">
+                    <article class="card reveal">
+                        <svg class="icon"><use href="#i-pin"/></svg>
+                        <h3>Nace en México</h3>
+                        <p>En 1969, Enrique Corcuera construyó en su casa de Acapulco una pista con paredes para jugar en poco espacio. Lo llamó "paddle tennis" con un giro propio.</p>
+                    </article>
+                    <article class="card reveal">
+                        <svg class="icon"><use href="#i-racket"/></svg>
+                        <h3>Mezcla de deportes</h3>
+                        <p>Tomó ideas del tenis y del frontón: una pista más pequeña, pala en lugar de raqueta y paredes que mantienen la bola en juego.</p>
+                    </article>
+                    <article class="card reveal">
+                        <svg class="icon"><use href="#i-wall"/></svg>
+                        <h3>La pared como aliada</h3>
+                        <p>Rebotar la bola contra el cristal y la malla fue la gran innovación: alarga los puntos y hace el juego accesible para casi todo el mundo.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- EVOLUCIÓN -->
+        <section class="section alt" id="evolucion">
+            <div class="section-content">
+                <header class="section-head reveal">
+                    <span class="kicker">02 &middot; Cambio de lado</span>
+                    <h2>La evolución</h2>
+                </header>
+                <div class="timeline">
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">1969</span>
+                            <h3>Primera pista en Acapulco</h3>
+                            <p>Corcuera diseña y construye la primera pista. Sus medidas inspiran el reglamento que hoy conocemos.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">1970s</span>
+                            <h3>España y Argentina</h3>
+                            <p>El príncipe Alfonso de Hohenlohe lo lleva al Marbella Club hacia 1974. Desde allí se expande por España, mientras en Argentina se convierte en fenómeno social.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">1991</span>
+                            <h3>Nace la Federación Internacional</h3>
+                            <p>Se funda la FIP para unificar reglas y organizar campeonatos mundiales.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2000s</span>
+                            <h3>Profesionalización</h3>
+                            <p>Aparecen circuitos profesionales, retransmisiones y jugadores que viven del pádel.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item reveal">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <span class="timeline-date">2020s</span>
+                            <h3>Boom global</h3>
+                            <p>Con el circuito Premier Padel y miles de clubes nuevos, el pádel crece en Europa, Oriente Medio, Asia y América.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DATOS -->
+        <section class="section scoreboard-section" id="datos">
+            <div class="section-content">
+                <header class="section-head reveal">
+                    <span class="kicker">03 &middot; Marcador</span>
+                    <h2>Datos en cifras</h2>
+                </header>
+                <div class="facts-grid">
+                    <div class="fact reveal">
+                        <div class="fact-number"><span class="count" data-count="1969" data-format="plain">0</span></div>
+                        <p>Año en que se inventó el pádel</p>
+                    </div>
+                    <div class="fact reveal">
+                        <div class="fact-number">+<span class="count" data-count="30">0</span>M</div>
+                        <p>Jugadores en el mundo (aprox.)</p>
+                    </div>
+                    <div class="fact reveal">
+                        <div class="fact-number">+<span class="count" data-count="50">0</span>K</div>
+                        <p>Pistas repartidas por el planeta (aprox.)</p>
+                    </div>
+                    <div class="fact reveal">
+                        <div class="fact-number"><span class="count" data-count="20">0</span>×<span class="count" data-count="10">0</span></div>
+                        <p>Metros de una pista reglamentaria</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACTUALIDAD -->
+        <section class="section alt" id="actualidad">
+            <div class="section-content">
+                <header class="section-head reveal">
+                    <span class="kicker">04 &middot; Partido en juego</span>
+                    <h2>El pádel hoy</h2>
+                </header>
+                <div class="content-grid two">
+                    <article class="card reveal">
+                        <svg class="icon"><use href="#i-globe"/></svg>
+                        <h3>Fenómeno global</h3>
+                        <p>Es uno de los deportes de raqueta y pala que más rápido crece. Ha pasado de ser un entretenimiento de club a llenar pabellones.</p>
+                    </article>
+                    <article class="card reveal">
+                        <svg class="icon"><use href="#i-trophy"/></svg>
+                        <h3>Circuitos de élite</h3>
+                        <p>Premier Padel, creado en 2022, reúne a las mejores parejas del mundo en torneos con grandes premios y afición creciente.</p>
+                    </article>
+                    <article class="card reveal">
+                        <svg class="icon"><use href="#i-tv"/></svg>
+                        <h3>Presente en televisión y redes</h3>
+                        <p>Las retransmisiones y los puntos espectaculares en redes sociales han acercado el pádel a millones de personas nuevas.</p>
+                    </article>
+                    <article class="card reveal">
+                        <svg class="icon"><use href="#i-ring"/></svg>
+                        <h3>La meta olímpica</h3>
+                        <p>La comunidad del pádel trabaja para llegar algún día a los Juegos Olímpicos. Todavía no es deporte olímpico.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- REGLAS -->
+        <section class="section" id="reglas">
+            <div class="section-content">
+                <header class="section-head reveal">
+                    <span class="kicker">05 &middot; Reglamento</span>
+                    <h2>Así se juega</h2>
+                </header>
+                <div class="rules-grid">
+                    <div class="rule reveal">
+                        <svg class="icon"><use href="#i-ruler"/></svg>
+                        <h3>La pista</h3>
+                        <p><strong>20 × 10 m</strong>, con red central y paredes de cristal y malla metálica que forman parte del juego.</p>
+                    </div>
+                    <div class="rule reveal">
+                        <svg class="icon"><use href="#i-users"/></svg>
+                        <h3>Dos parejas</h3>
+                        <p>Se juega casi siempre en <strong>dobles</strong>, lo que lo hace muy social y menos exigente físicamente.</p>
+                    </div>
+                    <div class="rule reveal">
+                        <svg class="icon"><use href="#i-ball"/></svg>
+                        <h3>La bola</h3>
+                        <p>Parecida a la de tenis, con algo menos de presión. Rebota en suelo y paredes.</p>
+                    </div>
+                    <div class="rule reveal">
+                        <svg class="icon"><use href="#i-racket"/></svg>
+                        <h3>La pala</h3>
+                        <p>Maciza, perforada y <strong>sin cordaje</strong>. Más corta y manejable que una raqueta de tenis.</p>
+                    </div>
+                    <div class="rule reveal">
+                        <svg class="icon"><use href="#i-score"/></svg>
+                        <h3>Puntuación</h3>
+                        <p>Igual que el tenis: <strong>15, 30, 40 y juego</strong>. Los partidos son al mejor de tres sets.</p>
+                    </div>
+                    <div class="rule reveal">
+                        <svg class="icon"><use href="#i-bolt"/></svg>
+                        <h3>El saque</h3>
+                        <p>Se saca <strong>por debajo de la cintura</strong>, tras un bote, y en diagonal al cuadro contrario.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA FINAL -->
+        <section class="section cta-final">
+            <div class="cta-court" aria-hidden="true"></div>
+            <div class="section-content cta-content reveal">
+                <h2>Tu turno <span class="outline">de saque</span></h2>
+                <p>El pádel se aprende en una tarde y engancha toda la vida. Busca una pista y a tres amigos.</p>
+                <a href="#inicio" class="cta-button large">Volver al inicio</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Historia del Pádel. Hecho con pasión por este deporte.</p>
+        </div>
+    </footer>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        const bar = document.getElementById('progressBar');
+        const links = [...document.querySelectorAll('.nav-links a')];
+        const sections = links.map(a => document.querySelector(a.getAttribute('href')));
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // Scroll suave
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const target = document.querySelector(a.getAttribute('href'));
+                if (!target) return;
+                e.preventDefault();
+                target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+                navLinks.classList.remove('open');
+                menuToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+
+        // Menú móvil
+        menuToggle.addEventListener('click', () => {
+            const open = navLinks.classList.toggle('open');
+            menuToggle.setAttribute('aria-expanded', String(open));
+        });
+
+        // Progreso, navbar y enlace activo
+        let ticking = false;
+        function onScroll() {
+            const y = window.scrollY;
+            const max = document.documentElement.scrollHeight - window.innerHeight;
+            bar.style.transform = `scaleX(${max > 0 ? y / max : 0})`;
+            navbar.classList.toggle('scrolled', y > 40);
+
+            const probe = y + window.innerHeight * 0.35;
+            let current = 0;
+            sections.forEach((s, i) => { if (s && s.offsetTop <= probe) current = i; });
+            links.forEach((a, i) => a.classList.toggle('active', i === current));
+            ticking = false;
+        }
+        window.addEventListener('scroll', () => {
+            if (!ticking) { requestAnimationFrame(onScroll); ticking = true; }
+        }, { passive: true });
+        onScroll();
+
+        // Contadores
+        function runCount(el) {
+            const target = +el.dataset.count;
+            const plain = el.dataset.format === 'plain';
+            const fmt = n => plain ? String(n) : n.toLocaleString('es-ES');
+            if (reduceMotion) { el.textContent = fmt(target); return; }
+            const dur = 1600, t0 = performance.now();
+            (function step(t) {
+                const p = Math.min((t - t0) / dur, 1);
+                el.textContent = fmt(Math.round(target * (1 - Math.pow(1 - p, 3))));
+                if (p < 1) requestAnimationFrame(step);
+            })(t0);
+        }
+
+        // Revelado escalonado
+        const io = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                const el = entry.target;
+                const siblings = [...el.parentElement.children].filter(c => c.classList.contains('reveal'));
+                el.style.setProperty('--d', `${Math.min(siblings.indexOf(el), 5) * 90}ms`);
+                el.classList.add('visible');
+                setTimeout(() => el.style.removeProperty('--d'), 1600);
+                el.querySelectorAll('.count').forEach(runCount);
+                io.unobserve(el);
+            });
+        }, { threshold: 0.15 });
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    </script>
+</body>
+
+</html>
